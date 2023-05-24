@@ -1,0 +1,10 @@
+.header-info {
+  display: flex;
+  background-color: gray;
+  justify-content: space-around;
+}
+.header-infodiv {
+  color: red;
+}
+
+/*# sourceMappingURL=index.css.map */
