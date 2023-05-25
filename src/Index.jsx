@@ -1,5 +1,4 @@
 // import viteLogo from '/vite.svg';
-import React from 'react';
 import ShieldCheck from './assets/ShieldCheck.svg';
 import truck from './assets/Truck.svg';
 import creditCard from './assets/CreditCard.svg';
@@ -18,7 +17,15 @@ import corrida from './assets/corrida.svg';
 import moda from './assets/moda.svg';
 import Carrossel from './components/Carrossel.jsx';
 
-export const slides = ['Slide 1', 'Slide 2', 'Slide 3'];
+const slides = ['Slide 1', 'Slide 2', 'Slide 3'];
+
+const products = () => {
+  fetch('https://app.econverse.com.br/teste-front-end/junior/tecnologia/lista-produtos/produtos.json')
+  .then(response => response.json()).then(data => {
+    console.log(data)
+  }).catch(error => {console.log(error)});
+}
+products()
 
 function Home() {
 
