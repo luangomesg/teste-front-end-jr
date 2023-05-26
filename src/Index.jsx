@@ -16,14 +16,31 @@ import ferramentas from './assets/ferramentas.svg';
 import saude from './assets/saude.svg';
 import corrida from './assets/corrida.svg';
 import moda from './assets/moda.svg';
-import {Carrossel, TwoCarrossel} from './components/Carrossel.jsx';
+import { Carrossel, TwoCarrossel } from './components/Carrossel.jsx';
+import facebook from './assets/facebook.svg';
+import instagram from './assets/instagram.svg';
+import youtube from './assets/youtube.svg'
+import visa from './assets/visa.svg';
+import elo from './assets/elo.svg';
+import alelo from './assets/alelo.svg';
+import dinners from './assets/dinners.svg';
+import ifood from './assets/ifood.svg';
+import mastercard from './assets/mastercard.svg';
+import pix from './assets/pix.svg';
+import amex from './assets/amex.svg';
+import ticket from './assets/ticket.svg';
+import sodexo from './assets/sodexo.svg';
+
+
+
+
 
 
 
 function Home() {
 
   const [photos, setPhotos] = useState([]);
-  
+
 
   useEffect(() => {
     const fetchData = async () => {
@@ -39,7 +56,7 @@ function Home() {
     fetchData();
   }, []);
   const slides = photos;
-  const plus = true;
+
 
   return (
     <>
@@ -146,7 +163,7 @@ function Home() {
         <h2>Produtos relacionados</h2>
         <p>Ver todos</p>
 
-        <Carrossel slides={slides} plus={plus} />
+        <Carrossel slides={slides} />
 
         <div className='main-ad'>
           <div><h2>Parceiros</h2> <p>Lorem ipsum dolor sit amet consectetur.</p> <button>CONFIRA</button></div>
@@ -155,14 +172,64 @@ function Home() {
 
         <h2 className='marcas'>Navegue por marcas</h2>
 
-        <TwoCarrossel/>
+        <TwoCarrossel />
 
         <h2>Produtos relacionados</h2>
         <p>Ver todos</p>
 
-        <Carrossel slides={slides} plus={plus} />
+        <Carrossel slides={slides} />
 
       </main>
+
+      <footer>
+        <div className='footer-one'>
+          <div>
+            <p>Sobre nós</p>
+            <p>CONHEÇA</p>
+            <p>COMO COMPRAR</p>
+            <p>INDICAÇÃO E DESCONTO</p>
+            <div className='social'>
+              <img src={facebook} alt="face" />
+              <img src={instagram} alt="insta" />
+              <img src={youtube} alt="youtube" />
+            </div>
+          </div>
+          <div>
+            <p>INFORMAÇÕES ÚTEIS</p>
+            <p>FALE CONOSCO</p>
+            <p>DÚVIDAS</p>
+            <p>PRAZOS E ENTREGA</p>
+            <p>FORMAS DE PAGAMENTO</p>
+            <p>POLÍTICA DE PRIVACIDADE</p>
+            <p>TROCAS E DEVOLUÇÃO</p>
+          </div>
+
+          <div className='pgt'>
+            <p>FORMAS DE PAGAMENTO</p>
+            <img src={visa} alt="visa" />
+            <img src={elo} alt="elo" />
+            <img src={alelo} alt="alelo" />
+            <img src={dinners} alt="dinners" />
+            <img src={ifood} alt="ifood" />
+            <img src={mastercard} alt="mastercard" />
+            <img src={pix} alt="pix" />
+            <img src={amex} alt="amex" />
+            <img src={ticket} alt="ticket" />
+            <img src={sodexo} alt="sodexo" />
+          </div>
+          <div className='cadastre'>
+            <h2><span>Cadastre-se e Receba nossas</span><br/>
+              novidades e promoções</h2>
+              <p>Excepteur sint occaecat cudatat non ent, sunt in culpa qui officia lorem ipsum</p>
+              <div>
+              <input placeholder='SEU E-MAIL' type="text" /> <button>OK</button>
+              </div>
+          </div>
+        </div>
+        <div className='footer-two'>
+
+        </div>
+      </footer>
     </>
   )
 }
