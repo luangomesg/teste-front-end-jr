@@ -16,7 +16,7 @@ import ferramentas from './assets/ferramentas.svg';
 import saude from './assets/saude.svg';
 import corrida from './assets/corrida.svg';
 import moda from './assets/moda.svg';
-import Carrossel from './components/Carrossel.jsx';
+import {Carrossel, TwoCarrossel} from './components/Carrossel.jsx';
 
 
 
@@ -39,6 +39,7 @@ function Home() {
     fetchData();
   }, []);
   const slides = photos;
+  const plus = true;
 
   return (
     <>
@@ -138,6 +139,28 @@ function Home() {
 
         <Carrossel slides={slides} />
 
+        <div className='main-ad'>
+          <div><h2>Parceiros</h2> <p>Lorem ipsum dolor sit amet consectetur.</p> <button>CONFIRA</button></div>
+          <div><h2>Parceiros</h2> <p>Lorem ipsum dolor sit amet consectetur.</p> <button>CONFIRA</button></div>
+        </div>
+        <h2>Produtos relacionados</h2>
+        <p>Ver todos</p>
+
+        <Carrossel slides={slides} plus={plus} />
+
+        <div className='main-ad'>
+          <div><h2>Parceiros</h2> <p>Lorem ipsum dolor sit amet consectetur.</p> <button>CONFIRA</button></div>
+          <div><h2>Parceiros</h2> <p>Lorem ipsum dolor sit amet consectetur.</p> <button>CONFIRA</button></div>
+        </div>
+
+        <h2 className='marcas'>Navegue por marcas</h2>
+
+        <TwoCarrossel/>
+
+        <h2>Produtos relacionados</h2>
+        <p>Ver todos</p>
+
+        <Carrossel slides={slides} plus={plus} />
 
       </main>
     </>

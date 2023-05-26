@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
+import marc from '../assets/marc.svg';
 
 
+
+// eslint-disable-next-line react/prop-types
 const Carrossel = ({ slides }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
@@ -37,4 +40,39 @@ const Carrossel = ({ slides }) => {
   );
 };
 
-export default Carrossel;
+const TwoCarrossel = () => {
+ 
+
+ 
+
+  return (
+    <div className="twocarrossel">
+      <div className='twocarousel-all'>
+        <div className="twocarousel-track">
+          
+            <div className="twocarousel-slide">
+              <img src={marc} alt="marca" />
+            </div>
+            <div className="twocarousel-slide">
+              <img src={marc} alt="marca" />
+            </div>
+            <div className="twocarousel-slide">
+              <img src={marc} alt="marca" />
+            </div>
+            <div className="twocarousel-slide">
+              <img src={marc} alt="marca" />
+            </div>
+            <div className="twocarousel-slide">
+              <img src={marc} alt="marca" />
+            </div>
+            
+          
+        </div>
+      </div>
+      <button className="next-button arrow-button" > <FontAwesomeIcon icon={faChevronRight} /></button>
+    </div>
+  )
+}
+
+export {Carrossel, TwoCarrossel};
+
