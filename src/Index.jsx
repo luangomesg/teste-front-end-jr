@@ -30,6 +30,8 @@ import pix from './assets/pix.svg';
 import amex from './assets/amex.svg';
 import ticket from './assets/ticket.svg';
 import sodexo from './assets/sodexo.svg';
+import group from './assets/Group831.svg';
+import cell from './assets/cell.svg';
 
 
 
@@ -40,6 +42,8 @@ import sodexo from './assets/sodexo.svg';
 function Home() {
 
   const [photos, setPhotos] = useState([]);
+  const [modalOpen, setModalOpen] = useState(false);
+
 
 
   useEffect(() => {
@@ -56,6 +60,16 @@ function Home() {
     fetchData();
   }, []);
   const slides = photos;
+
+
+  const openModal = () => {
+    setModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setModalOpen(false);
+  };
+
 
 
   return (
@@ -154,7 +168,23 @@ function Home() {
           <div>VER TODOS</div>
         </div>
 
-        <Carrossel slides={slides} />
+        <Carrossel slides={slides} openModal={openModal} />
+
+        {modalOpen && (
+          <div className="modal">
+            <div className="modal-content">
+              <img src={cell} alt="celular" />
+              <div>
+                <h2>LOREM IPSUM DOLOR SIT AMET</h2>
+                <p className='price'>R$ 1.499,90</p>
+                <p>Many desktop publishing packages and web page editors now many desktop publishing</p>
+                <p>Veja mais detalhes do produto </p>
+                <button onClick={closeModal}></button>
+              </div>
+            </div>
+            
+          </div>
+        )}
 
         <div className='main-ad'>
           <div><h2>Parceiros</h2> <p>Lorem ipsum dolor sit amet consectetur.</p> <button>CONFIRA</button></div>
@@ -218,16 +248,18 @@ function Home() {
             <img src={sodexo} alt="sodexo" />
           </div>
           <div className='cadastre'>
-            <h2><span>Cadastre-se e Receba nossas</span><br/>
+            <h2><span>Cadastre-se e Receba nossas</span><br />
               novidades e promoções</h2>
-              <p>Excepteur sint occaecat cudatat non ent, sunt in culpa qui officia lorem ipsum</p>
-              <div>
+            <p>Excepteur sint occaecat cudatat non ent, sunt in culpa qui officia lorem ipsum</p>
+            <div>
               <input placeholder='SEU E-MAIL' type="text" /> <button>OK</button>
-              </div>
+            </div>
           </div>
         </div>
         <div className='footer-two'>
-
+          <p>Copyright © 2019. Todos os direitos reservados. Todas as marcas e suas imagens são de propriedade de seus respectivos donos.
+            É vedada a reprodução, total ou parcial, de qualquer conteúdo sem expressa autorização.</p>
+          <img src={group} alt="marcas" />
         </div>
       </footer>
     </>
